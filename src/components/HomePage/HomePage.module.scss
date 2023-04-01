@@ -50,4 +50,17 @@ margin-top: 20px;
     border: 2px solid #34414B;
     justify-content: center;
   }
-  
+
+  .cartbtn{
+    padding: 8px 8px 8px;
+border-radius: 10px;
+border: 2px solid black;
+margin-top: 10px;
+padding-left: 20px;
+padding-right: 20px;
+cursor: pointer;
+
+  }
+  .cartbtn:hover{
+    background-color: grey;
+  }
