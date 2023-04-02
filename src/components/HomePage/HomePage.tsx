@@ -62,7 +62,7 @@ const products: Product[] = [
   },
   {
     id: 8,
-    name: "Product 8",
+    name: "Sample Product",
     price: 29.99,
     image: "product.jpg",
   },
