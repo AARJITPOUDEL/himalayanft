@@ -1,0 +1,58 @@
+const products: Product[] = [
+  {
+    id: 1,
+    name: "Macbook Air M1 2020",
+    price: 19.99,
+    image: macbook,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 2,
+    name: "Iphone 14 Pro Max",
+    price: 29.99,
+    image: iphone,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 3,
+    name: "Asus ROG Strix 15",
+    price: 29.99,
+    image: asus,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 4,
+    name: "Apple Headphones",
+    price: 29.99,
+    image: headphones,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 5,
+    name: "KeyChron k8 Mechanical Keyboard",
+    price: 29.99,
+    image: keychron,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 6,
+    name: "Curved Monitor",
+    price: 29.99,
+    image: monitor,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 7,
+    name: "2TB External SSD",
+    price: 29.99,
+    image: ssd,
+    description: "Best Screen Display Quality",
+  },
+  {
+    id: 8,
+    name: "Sample Product",
+    price: 29.99,
+    image: "product.jpg",
+    description: "Best Screen Display Quality",
+  },
+];

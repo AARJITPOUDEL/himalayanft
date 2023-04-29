@@ -10,11 +10,13 @@ import ssd from "@/components/HomePage/images/ssd.png";
 import { StaticImageData } from "next/image";
 import logo from "@/components/HomePage/images/logo.png";
 import Navbar from "../Navbar/Navbar";
+import { useRouter } from "next/router";
 type Product = {
   id: number;
   name: string;
   price: number;
   image: string | StaticImageData;
+  description: string;
 };
 
 const products: Product[] = [
@@ -23,52 +25,61 @@ const products: Product[] = [
     name: "Macbook Air M1 2020",
     price: 19.99,
     image: macbook,
+    description: "Best Screen Display Quality",
   },
   {
     id: 2,
     name: "Iphone 14 Pro Max",
     price: 29.99,
     image: iphone,
+    description: "Best Screen Display Quality",
   },
   {
     id: 3,
     name: "Asus ROG Strix 15",
     price: 29.99,
     image: asus,
+    description: "Best Screen Display Quality",
   },
   {
     id: 4,
     name: "Apple Headphones",
     price: 29.99,
     image: headphones,
+    description: "Best Screen Display Quality",
   },
   {
     id: 5,
     name: "KeyChron k8 Mechanical Keyboard",
     price: 29.99,
     image: keychron,
+    description: "Best Screen Display Quality",
   },
   {
     id: 6,
     name: "Curved Monitor",
     price: 29.99,
     image: monitor,
+    description: "Best Screen Display Quality",
   },
   {
     id: 7,
     name: "2TB External SSD",
     price: 29.99,
     image: ssd,
+    description: "Best Screen Display Quality",
   },
   {
     id: 8,
     name: "Sample Product",
     price: 29.99,
     image: "product.jpg",
+    description: "Best Screen Display Quality",
   },
 ];
 
 const HomePage = () => {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -98,18 +109,33 @@ const HomePage = () => {
       <div className={styles.productContainer}>
         {filteredProducts.map((product) => (
           <div className={styles.product} key={product.id}>
-            {typeof product.image === "string" ? (
-              <img src={product.image} alt={product.name} />
-            ) : (
-              <img
-                src={product.image.src}
-                alt={product.name}
-                height={200}
-                width={200}
-              />
-            )}
-            <h3>{product.name}</h3>
-            <p>Rs.{product.price}</p>
+            <div
+              onClick={() => {
+                router.push({
+                  pathname: "/ProductView",
+                  query: {
+                    name: product.name,
+                    price: product.price,
+                    description: product.description,
+                    image: product.image,
+                  },
+                });
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              {typeof product.image === "string" ? (
+                <img src={product.image} alt={product.name} />
+              ) : (
+                <img
+                  src={product.image.src}
+                  alt={product.name}
+                  height={200}
+                  width={200}
+                />
+              )}
+              <h3>{product.name}</h3>
+              <p>Rs.{product.price}</p>
+            </div>
             <button
               className={styles.cartbtn}
               onClick={() => handleAddToCart(product)}
