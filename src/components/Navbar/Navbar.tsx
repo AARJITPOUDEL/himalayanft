@@ -25,7 +25,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div className={styles.signIn}>
-          <a href="#">Sign In</a>
+          <a href="#">Log In</a>
         </div>
       </div>
     </div>

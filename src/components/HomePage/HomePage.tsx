@@ -105,7 +105,7 @@ const HomePage = () => {
           className={styles.searchbar}
         />
       </div>
-      <h1 className={styles.title}>Featured Products</h1>
+      <h1 className={styles.title}>Best Selling Products</h1>
       <div className={styles.productContainer}>
         {filteredProducts.map((product) => (
           <div className={styles.product} key={product.id}>
